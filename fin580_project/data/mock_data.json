@@ -1,0 +1,12 @@
+[
+  {"event_type": "OPEC Cut", "entities": ["OPEC"], "timestamp": "2024-01-01T10:00:00Z", "macro_thesis": "Oil supply decreases", "confidence": 0.9},
+  {"event_type": "Demand Weak", "entities": ["Global"], "timestamp": "2024-01-02T10:00:00Z", "macro_thesis": "Demand slowdown", "confidence": 0.8},
+  {"event_type": "OPEC Cut", "entities": ["OPEC"], "timestamp": "2024-01-03T10:00:00Z", "macro_thesis": "Oil supply decreases", "confidence": 0.9},
+  {"event_type": "Demand Weak", "entities": ["Global"], "timestamp": "2024-01-04T10:00:00Z", "macro_thesis": "Demand slowdown", "confidence": 0.8},
+  {"event_type": "OPEC Cut", "entities": ["OPEC"], "timestamp": "2024-01-05T10:00:00Z", "macro_thesis": "Oil supply decreases", "confidence": 0.9},
+  {"event_type": "Demand Weak", "entities": ["Global"], "timestamp": "2024-01-06T10:00:00Z", "macro_thesis": "Demand slowdown", "confidence": 0.8},
+  {"event_type": "OPEC Cut", "entities": ["OPEC"], "timestamp": "2024-01-07T10:00:00Z", "macro_thesis": "Oil supply decreases", "confidence": 0.9},
+  {"event_type": "Demand Weak", "entities": ["Global"], "timestamp": "2024-01-08T10:00:00Z", "macro_thesis": "Demand slowdown", "confidence": 0.8},
+  {"event_type": "OPEC Cut", "entities": ["OPEC"], "timestamp": "2024-01-09T10:00:00Z", "macro_thesis": "Oil supply decreases", "confidence": 0.9},
+  {"event_type": "Demand Weak", "entities": ["Global"], "timestamp": "2024-01-10T10:00:00Z", "macro_thesis": "Demand slowdown", "confidence": 0.8}
+]
