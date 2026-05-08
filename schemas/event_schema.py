@@ -1,15 +1,9 @@
 """
-Event Schema for Agent 1 (Event Detection Agent)
+Event Schema for Agent 1
 
 Purpose:
-This schema defines the structured output format
-for all detected macroeconomic and geopolitical events.
-
-Why this matters:
-- Standardizes communication between agents
-- Enables auditability and reproducibility
-- Prevents malformed JSON outputs
-- Creates structured event records for downstream agents
+Defines structured event outputs
+generated from financial news.
 """
 
 from pydantic import BaseModel
@@ -21,26 +15,14 @@ class EventOutput(BaseModel):
     # Unique event identifier
     event_id: str
 
-    # Original publication timestamp
+    # News timestamp
     timestamp: str
 
-    # Original news headline
-    headline: str
-
-    # High-level event classification
+    # Event classification
     event_type: str
 
-    # Event category
-    category: str
-
-    # Key organizations, countries, or institutions
+    # Relevant entities
     entities: List[str]
 
-    # Expected directional impact on Brent oil
-    directional_bias: str
-
-    # Confidence score between 0 and 1
-    confidence_score: float
-
-    # News source
-    source: str
+    # Model confidence score
+    confidence: float

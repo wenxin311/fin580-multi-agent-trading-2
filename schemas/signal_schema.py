@@ -1,17 +1,10 @@
-##Structured Trading Decision Layer##
-
 """
-Signal Schema for Agent 3 (Signal / Asset Mapping Agent)
+Signal Schema for Agent 3
 
 Purpose:
-This schema defines the structured trading signal
-generated from macroeconomic reasoning outputs.
-
-Why this matters:
-- Converts macro reasoning into tradable signals
-- Standardizes signal generation
-- Enables downstream risk management
-- Creates explainable portfolio actions
+Defines structured trading signals,
+historical analog comparisons,
+and preliminary alpha evaluation.
 """
 
 from pydantic import BaseModel
@@ -19,10 +12,10 @@ from pydantic import BaseModel
 
 class SignalOutput(BaseModel):
 
-    # Reference to original event
+    # Reference event
     event_id: str
 
-    # Target tradable asset
+    # Tradable asset
     asset: str
 
     # Market ticker
@@ -31,17 +24,43 @@ class SignalOutput(BaseModel):
     # Trading direction
     signal: str
 
-    # Quantitative signal strength
+    # Signal strength
     signal_strength: float
 
-    # Qualitative conviction score
+    # Conviction score
     conviction_score: int
 
     # Suggested entry timing
     entry_timing: str
 
-    # Suggested holding horizon
+    # Suggested holding period
     holding_period_days: int
 
-    # Supporting reasoning
+    # Trading rationale
     supporting_reason: str
+
+    # -----------------------------------
+    # Mini Backtest Metrics
+    # -----------------------------------
+
+    # Historical average return
+    historical_avg_return: float
+
+    # Historical win rate
+    historical_win_rate: float
+
+    # Expected alpha estimate
+    expected_alpha: float
+
+    # -----------------------------------
+    # Historical Analog Reasoning
+    # -----------------------------------
+
+    # Most similar historical event
+    historical_analog_event: str
+
+    # Historical return of analog event
+    historical_analog_return: float
+
+    # Similarity score
+    historical_similarity_score: float

@@ -1,16 +1,21 @@
-# Python virtual environment
-venv/
-
-# Environment variables
-.env
-
-# Python cache
+# Python
 __pycache__/
 *.pyc
 
-# Mac system files
+# Virtual Environment
+venv/
+
+# Mac
 .DS_Store
 
-# Output logs
-outputs/*.json
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+
+# Outputs
 outputs/*.csv
+
+# Processed Data
+data/processed/*.json

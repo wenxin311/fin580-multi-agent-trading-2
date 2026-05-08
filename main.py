@@ -2,11 +2,8 @@
 Main Pipeline Runner
 
 Purpose:
-This file tests the end-to-end execution
-of the multi-agent architecture.
-
-Current Stage:
-Testing Agent 1 (Event Detection Agent)
+Test the full end-to-end execution
+of the multi-agent trading system.
 """
 
 from agents.event_agent import run_event_agent
@@ -15,39 +12,61 @@ from agents.signal_agent import run_signal_agent
 from agents.risk_agent import run_risk_agent
 from agents.portfolio_agent import run_portfolio_agent
 
-# Example financial news
+
+# ---------------------------------------------------
+# SAMPLE NEWS INPUT
+# ---------------------------------------------------
+
 sample_news = """
 OPEC announced a surprise production cut
 of 1 million barrels per day.
 """
 
-# Example timestamp
 sample_timestamp = "2024-05-01 08:30:00"
 
 
-# Run Agent 1
+# ---------------------------------------------------
+# AGENT 1 — EVENT DETECTION
+# ---------------------------------------------------
+
 event_output = run_event_agent(
     sample_news,
     sample_timestamp
 )
 
-# Run Agent 2
+
+# ---------------------------------------------------
+# AGENT 2 — MACRO REASONING
+# ---------------------------------------------------
+
 macro_output = run_macro_agent(event_output)
 
-# Run Agent 3
+
+# ---------------------------------------------------
+# AGENT 3 — SIGNAL GENERATION
+# ---------------------------------------------------
+
 signal_output = run_signal_agent(macro_output)
 
-# Run Agent 4
+
+# ---------------------------------------------------
+# AGENT 4 — RISK MANAGEMENT
+# ---------------------------------------------------
+
 risk_output = run_risk_agent(signal_output)
 
-# Run Agent 5
-portfolio_output = run_portfolio_agent(
-    signal_output,
-    risk_output
-)
+
+# ---------------------------------------------------
+# AGENT 5 — PORTFOLIO CONSTRUCTION
+# ---------------------------------------------------
+
+portfolio_output = run_portfolio_agent(risk_output)
 
 
-# Print structured result
+# ---------------------------------------------------
+# PRINT OUTPUTS
+# ---------------------------------------------------
+
 print("\n===== EVENT OUTPUT =====")
 print(event_output.model_dump_json(indent=4))
 

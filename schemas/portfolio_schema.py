@@ -1,15 +1,9 @@
 """
-Portfolio Schema for Agent 5 (Portfolio Manager Agent)
+Portfolio Schema for Agent 5
 
 Purpose:
-This schema defines the final executable portfolio
-decision generated after signal and risk evaluation.
-
-Why this matters:
-- Converts approved signals into final trades
-- Produces position sizing decisions
-- Creates a full audit trail
-- Enables backtesting and execution simulation
+Defines executable portfolio trades
+generated after risk approval.
 """
 
 from pydantic import BaseModel
@@ -17,29 +11,20 @@ from pydantic import BaseModel
 
 class PortfolioOutput(BaseModel):
 
-    # Reference to original event
-    event_id: str
+    # Trade date
+    date: str
 
-    # Final execution decision
-    final_decision: str
+    # Tradable asset
+    asset: str
 
-    # Final trading direction
-    final_position: str
+    # Trading direction
+    direction: str
 
-    # Target asset ticker
-    ticker: str
-
-    # Final USD position size
-    position_size_usd: int
+    # USD trade size
+    size_usd: float
 
     # Reference entry price
-    entry_price_reference: float
+    entry_price_ref: float
 
-    # Expected holding duration
-    expected_holding_period: int
-
-    # Simulated execution timestamp
-    execution_timestamp: str
-
-    # Final portfolio reasoning
-    portfolio_reasoning: str
+    # Explainable reasoning trace
+    reasoning_trace: str
